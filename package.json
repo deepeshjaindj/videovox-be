@@ -1,0 +1,22 @@
+{
+  "name": "videovox-be",
+  "version": "1.0.0",
+  "description": "Backend for a video managing and streaming project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "node",
+    "video-management",
+    "express"
+  ],
+  "author": "Deepesh Jain DJ",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
