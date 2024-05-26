@@ -22,12 +22,12 @@ const userController = asyncHandler(async (req, res) => {
   })
 
   if (existingUser) {
-    throw new ApiError(400, "Username or Email already existing");
+    throw new ApiError(409, "Username or Email already existing");
   }
 
   // check for images, check for avatar
   const avatarLocalFilePath = req.files?.avatar[0]?.path;
-  const coverImageLocalFilePath = req.files?.coverImage[0]?.path;
+  const coverImageLocalFilePath = req.files?.coverImage?.[0]?.path;
 
   if (!avatarLocalFilePath) {
     throw new ApiError(400, "avatar is required")
@@ -53,7 +53,7 @@ const userController = asyncHandler(async (req, res) => {
 
   // check for user creation
   // remove password and refreshToken field from response
-  const createdUser = await User.findById(user?._id, { password: -1, refreshToken: -1 });
+  const createdUser = await User.findById(user?._id, { password: 0, refreshToken: 0 });
 
   if (!createdUser) {
     throw new ApiError(500, "Something went wrong while registering the user.")
