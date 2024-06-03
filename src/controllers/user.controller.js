@@ -154,7 +154,7 @@ const refreshAccessTokenController = asyncHandler(async (req, res) => {
     throw new ApiError(401, "Unauthorized Access");
   }
 
-  const decodedToken = jwt.decode(refreshToken, REFRESH_TOKEN_SECRET);
+  const decodedToken = jwt.verify(refreshToken, REFRESH_TOKEN_SECRET);
 
   const user = await User.findById(decodedToken?._id);
 
