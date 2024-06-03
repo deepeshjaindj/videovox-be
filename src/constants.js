@@ -16,3 +16,9 @@ export const REFRESH_TOKEN_EXPIRY = process.env.REFRESH_TOKEN_EXPIRY;
 export const CLOUDINARY_CLOUD_NAME = process.env.CLOUDINARY_CLOUD_NAME;
 export const CLOUDINARY_API_KEY = process.env.CLOUDINARY_API_KEY;
 export const CLOUDINARY_API_SECRET = process.env.CLOUDINARY_API_SECRET;
+
+
+export const COOKIE_OPTIONS = {
+  httpOnly: true,
+  secure: true
+};

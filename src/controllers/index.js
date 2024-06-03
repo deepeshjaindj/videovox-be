@@ -1,1 +1,1 @@
-export { default as userController } from './user.controller.js'
+export { registerController, loginController, logoutController, refreshAccessTokenController } from './user.controller.js'

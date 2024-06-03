@@ -73,7 +73,7 @@ userSchema.methods.isPasswordCorrect = async function(password) {
  * 
  * @returns {string} Access token for the user with specified expiry.
  */
-userSchema.methods.getAccessToken = function() {
+userSchema.methods.generateAccessToken = function() {
   return jwt.sign(
     {
       _id: this._id,
@@ -92,7 +92,7 @@ userSchema.methods.getAccessToken = function() {
  * Method to generate a refresh token using the user's _id with specified expiry time and secret.
  * @returns {string} The generated refresh token.
  */
-userSchema.methods.getRefreshToken = function() {
+userSchema.methods.generateRefreshToken = function() {
   return jwt.sign(
     {
       _id: this._id,
