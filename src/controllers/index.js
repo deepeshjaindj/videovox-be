@@ -1,1 +1,1 @@
-export { registerController, loginController, logoutController, refreshAccessTokenController } from './user.controller.js'
+export { registerController, loginController, logoutController, refreshAccessTokenController, changePasswordController, getCurrentUserController, updateAccountDetailsController, updateUserAvatarController, updateUserCoverImageController } from './user.controller.js'
